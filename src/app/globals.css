@@ -1,0 +1,21 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .list-title {
+    @apply text-2xl font-bold mb-8 text-red-700 text-center;
+  }
+
+  .card-container {
+    @apply flex flex-wrap justify-center gap-5;
+  }
+
+  .card-style {
+    @apply flex flex-col w-80	border border-white	items-center gap-1 p-4;
+  }
+}
+
+/* 768px 모바일 */
+@media (max-width: 768px) {
+}
