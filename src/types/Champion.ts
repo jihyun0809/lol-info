@@ -11,7 +11,7 @@ export interface Champion {
     full: string; // 이미지 파일명
   };
   name: string; // 챔피언 이름
-  title: string; // 챔피언 타이틀 
+  title: string; // 챔피언 타이틀
 }
 
 // 챔피언 상세 정보 타입
@@ -19,7 +19,7 @@ export interface ChampionDetail extends Champion {
   lore: string; // 배경 스토리
   allytips: string[]; // 플레이어를 위한 팁
   enemytips: string[]; // 적을 상대할 때의 팁
-  tags: string[]; // 챔피언 역할 태그 
+  tags: string[]; // 챔피언 역할 태그
   info: ChampionInfo; // 챔피언 능력치 정보
 }
 

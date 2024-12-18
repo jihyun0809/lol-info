@@ -13,18 +13,14 @@ const MainCard = ({ title, imgURL, href }: MainCardProps) => {
     <li className="w-full max-w-md">
       <Link href={href} className="block hover:opacity-90 transition">
         <div className="flex flex-col items-center gap-4">
-          {/* 이미지 */}
           <Image
-            src={imgURL}
+            src={imgURL} // StaticImageData 허용
             alt={title}
             width={500}
             height={300}
             className="rounded-lg shadow-lg"
           />
-          {/* 제목을 노란색으로 설정 */}
-          <h2 className="text-center text-xl font-bold text-yellow-400">
-            {title}
-          </h2>
+          <h2 className="text-center text-xl font-bold text-white">{title}</h2>
         </div>
       </Link>
     </li>
