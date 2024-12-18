@@ -1,21 +1,72 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@tailwind base; /* Tailwind 기본 스타일 */
+@tailwind components; /* Tailwind 컴포넌트 스타일 */
+@tailwind utilities; /* Tailwind 유틸리티 클래스 */
 
-@layer components {
-  .list-title {
-    @apply text-2xl font-bold mb-8 text-red-700 text-center;
-  }
+/* 루트에서 기본 색상 정의 */
+:root {
+  --background: #ffffff; /* 기본 배경색 (화이트) */
+  --foreground: #171717; /* 기본 텍스트 색상 (다크 그레이) */
+}
 
-  .card-container {
-    @apply flex flex-wrap justify-center gap-5;
-  }
-
-  .card-style {
-    @apply flex flex-col w-80	border border-white	items-center gap-1 p-4;
+/* 다크 모드에서 색상 변경 */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a; /* 다크 모드 배경색 */
+    --foreground: #ededed; /* 다크 모드 텍스트 색상 */
   }
 }
 
-/* 768px 모바일 */
-@media (max-width: 768px) {
+/* body 기본 스타일 설정 */
+body {
+  color: var(--foreground); /* 텍스트 색상: 다크 또는 라이트 모드 */
+  background: var(--background); /* 배경색: 다크 또는 라이트 모드 */
+  font-family: Arial, Helvetica, sans-serif; /* 기본 폰트 설정 */
+}
+
+/* 유틸리티 클래스 추가 */
+@layer utilities {
+  .text-balance {
+    text-wrap: balance; /* 텍스트 줄 바꿈 균형 */
+  }
+}
+
+/* 헤더 스타일 */
+.header-style {
+  @apply fixed top-0 w-full; /* 헤더를 화면 상단에 고정하고 전체 너비로 확장 */
+}
+
+/* 네비게이션 바 스타일 */
+.nav-style {
+  @apply flex flex-row justify-between items-center py-3 bg-gray-800 text-white; /* 플렉스 레이아웃, 배경 회색, 텍스트 흰색 */
+}
+
+/* 메인 컨텐츠 스타일 */
+.main-style {
+  @apply py-36 m-auto px-4 max-w-[1600px]; /* 상하 여백, 중앙 정렬, 최대 너비 1600px */
+}
+
+/* 페이지 제목 스타일 */
+.title-style {
+  @apply font-bold text-2xl mb-12 text-[#f55]; /* 굵은 글씨, 2xl 크기, 하단 여백, 빨간색 텍스트 */
+}
+
+/* 목록 컨테이너 스타일 */
+.list-style {
+  @apply grid grid-cols-2 gap-5 md:grid-cols-5; /* 그리드 레이아웃, 열 2개 (모바일), 열 5개 (중간 화면 이상) */
+}
+
+/* 개별 목록 아이템 스타일 */
+.list-item-style {
+  @apply border p-5 rounded-lg transition duration-500 dark:hover:shadow-[0_10px_20px_0px_rgba(255,255,255,0.4)] hover:shadow-[0_10px_20px_0px_rgba(0,0,0,0.4)];
+  /* 테두리 추가, 패딩, 둥근 모서리, 호버 시 그림자 효과 */
+}
+
+/* 목록 아이템 제목 스타일 */
+.list-item-title-style {
+  @apply font-bold text-xl text-[#f55]; /* 굵은 글씨, XL 크기, 빨간색 텍스트 */
+}
+
+/* 목록 아이템 설명 텍스트 스타일 */
+.list-description-title-style {
+  @apply dark:text-gray-500; /* 다크 모드에서 설명 텍스트를 연한 회색으로 설정 */
 }
