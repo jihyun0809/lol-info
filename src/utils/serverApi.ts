@@ -6,14 +6,21 @@ const commonUrl = "https://ddragon.leagueoflegends.com/cdn/14.19.1/data/ko_KR";
 
 // 챔피언 목록 가져오기 (ISR 방식)
 export const fetchChampionList = async (): Promise<Champion[]> => {
-  const response = await fetch("https://example.com/api/champion-list");
+  try {
+    const response = await fetch(`${commonUrl}/champion.json`);
+    if (!response.ok) {
+      console.error("Failed to fetch champion list:", response.statusText);
+      return [];
+    }
 
-  if (!response.ok) {
-    throw new Error("Failed to fetch champion list");
+    const data = await response.json();
+
+    // 챔피언 데이터를 배열로 변환
+    return Object.values(data.data) ?? [];
+  } catch (error) {
+    console.error("Error fetching champion list:", error);
+    return [];
   }
-
-  const data = await response.json();
-  return data?.champions ?? []; // 데이터 없으면 빈 배열 반환
 };
 
 // 챔피언 상세 정보 가져오기 (동적 렌더링 방식)
