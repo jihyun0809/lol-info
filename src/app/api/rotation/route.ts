@@ -1,6 +1,6 @@
 import { fetchChampionList } from "@/utils/serverApi";
 
-const apiKey = process.env.NEXT_PUBLIC_RIOT_API_KEY!;
+const apiKey = process.env.RIOT_API_KEY!;
 
 type RotationData = {
   freeChampionIds: number[];

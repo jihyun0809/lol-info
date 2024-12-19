@@ -22,25 +22,25 @@ export default function RootLayout({
             <nav className="nav-style">
               <Link
                 href="/"
-                className="w-full text-center hover:underline underline-offset-8"
+                className="w-full text-center hover:underline underline-offset-8 text-yellow-500"
               >
                 홈
               </Link>
               <Link
                 href="/champions"
-                className="w-full text-center hover:underline underline-offset-8"
+                className="w-full text-center hover:underline underline-offset-8 text-yellow-500"
               >
                 챔피언 목록
               </Link>
               <Link
                 href="/items"
-                className="w-full text-center hover:underline underline-offset-8"
+                className="w-full text-center hover:underline underline-offset-8 text-yellow-500"
               >
                 아이템 목록
               </Link>
               <Link
                 href="/rotation"
-                className="w-full text-center hover:underline underline-offset-8"
+                className="w-full text-center hover:underline underline-offset-8 text-yellow-500"
               >
                 챔피언 로테이션
               </Link>
